@@ -7,18 +7,22 @@ var sass = require('gulp-sass'),
 gulp.task('sass', function () {
     return gulp.src('./sass/**/*.scss')
         .pipe(sass().on('error', sass.logError))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('./css'))
         .pipe(connect.reload());
 });
 gulp.task('connect-web', function() {
     connect.server({
         root: '../',
-        port: 2000,
+        port: 2001,
         livereload: true
     });
 });
 
 
+gulp.task('sass:watch',[], function () {
+    gulp.watch('./sass/**/*.scss', ['sass']);
+});
 gulp.task('web',['connect-web'], function () {
     gulp.watch('./sass/**/*.scss', ['sass']);
 });

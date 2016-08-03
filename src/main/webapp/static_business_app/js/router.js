@@ -2,12 +2,12 @@
  * Router
  * @return {[type]} [description]
  */
-define('router', ['js/longyan/view/layout'], function(LayoutView) {
+define('router', ['js/modules/view/layout'], function(LayoutView) {
     var Router = Backbone.Router.extend({
         routes: {
             //首页
             "": "index",
-            "index": "index"
+            "test": "test"
         },
 
         //初始化布局
@@ -32,7 +32,7 @@ define('router', ['js/longyan/view/layout'], function(LayoutView) {
             var t = this;
             config = config || {};
             t.removeView();
-            requirejs(["js/longyan/view/" + view_id], function(IndexView) {
+            requirejs(["js/modules/view/" + view_id], function(IndexView) {
                 var container = document.body;
                 t.indexView = new IndexView({
                     el: container,
@@ -58,6 +58,11 @@ define('router', ['js/longyan/view/layout'], function(LayoutView) {
                 }, {}, {}, null, false);
                 t.pageStack['index'] = t.indexView;
             });
+        },
+        //test
+        test: function() {
+            var t = this;
+            t.changePage('test');
         },
         _isPC: function() {
             var t = this;

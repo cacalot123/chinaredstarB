@@ -1,0 +1,17 @@
+body {
+  background: #ccc; }
+
+.line {
+  width: 10rem;
+  height: 1rem;
+  line-height: 1rem;
+  background: #FFFFFF; }
+  [data-dpr="1"] .line {
+    font-size: 24px;
+    color: #000000; }
+  [data-dpr="2"] .line {
+    font-size: 48px;
+    color: #999999; }
+  [data-dpr="3"] .line {
+    font-size: 72px;
+    color: red; }

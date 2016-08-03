@@ -1,0 +1,6 @@
+@charset "UTF-8";
+
+@import "../base/function";
+
+body{background: #ccc;}
+.line{ width: px2rem(750); height: px2rem(75); line-height: px2rem(75); background: #FFFFFF; @include fontSize(48);}
