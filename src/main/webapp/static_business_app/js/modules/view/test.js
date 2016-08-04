@@ -35,8 +35,6 @@ define('js/modules/view/test', [
             //加载数据
             loadData: function() {
                 var t = this;
-
-
             }
 
         });
